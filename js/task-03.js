@@ -12,3 +12,14 @@ const images = [
     alt: 'Group of Horses Running',
   },
 ];
+
+
+
+const elementsListArray = images.map(element => 
+  
+  `<li><img src="${element.url}" alt="${element.alt}" width="640"></li>`
+  )
+
+const gelleryEl = document.querySelector('.gallery')
+gelleryEl.style.display = 'flex';
+gelleryEl.insertAdjacentHTML('afterbegin', elementsListArray.join())
