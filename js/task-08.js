@@ -9,6 +9,7 @@ function handleSubmit(event) {
   if (email.value === "" || password.value === "") {
     return alert("Заполни все поля!!");
   }
+  console.log(event);
   console.log ({email: email.value, password:password.value});
   event.currentTarget.reset();
 }
