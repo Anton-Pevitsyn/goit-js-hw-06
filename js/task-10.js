@@ -19,16 +19,14 @@ function createBoxes(amount) {
 }
 
 function creatingСollection(event) {
-  const quantityElements = event.currentTarget.value;
+  let quantityElements = event.currentTarget.value;
   createButton.addEventListener('click', () => {
     createBoxes(quantityElements);
+    quantityElements = 0;
   });
 }
 function removeCollection() {
-  const divArray = contener.querySelectorAll('div');
-  divArray.forEach(element => {
-    element.remove();
-  });
+  contener.innerHTML = '';
 }
 
 input.addEventListener('change', creatingСollection);
