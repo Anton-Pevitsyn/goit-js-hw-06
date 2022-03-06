@@ -13,13 +13,11 @@ const images = [
   },
 ];
 
+const elementsListArray = images.map(
+  element =>
+    `<li><img src="${element.url}" alt="${element.alt}" width="640"></li>`,
+);
 
-
-const elementsListArray = images.map(element => 
-  
-  `<li><img src="${element.url}" alt="${element.alt}" width="640"></li>`
-  )
-
-const gelleryEl = document.querySelector('.gallery')
+const gelleryEl = document.querySelector('.gallery');
 gelleryEl.style.display = 'flex';
-gelleryEl.insertAdjacentHTML('afterbegin', elementsListArray.join())
+gelleryEl.insertAdjacentHTML('afterbegin', elementsListArray.join());

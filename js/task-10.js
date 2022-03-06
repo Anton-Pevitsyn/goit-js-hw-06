@@ -10,26 +10,26 @@ const defoltWidth = 30;
 
 function createBoxes(amount) {
   for (let i = 0; i < amount; i += 1) {
-    const element =  document.createElement("div");
-    element.style.width =  `${defoltWidth + (i*10)}px`;
-    element.style.height = `${defoltWidth + (i*10)}px`;
+    const element = document.createElement('div');
+    element.style.width = `${defoltWidth + i * 10}px`;
+    element.style.height = `${defoltWidth + i * 10}px`;
     element.style.backgroundColor = getRandomHexColor();
     contener.append(element);
   }
 }
 
-function creatingСollection (event) {
- const quantityElements =  event.currentTarget.value;
-  createButton.addEventListener('click', ()=> {
-    createBoxes(quantityElements)
-  })
+function creatingСollection(event) {
+  const quantityElements = event.currentTarget.value;
+  createButton.addEventListener('click', () => {
+    createBoxes(quantityElements);
+  });
 }
-function removeCollection () {
-  const divArray = contener.querySelectorAll('div')
+function removeCollection() {
+  const divArray = contener.querySelectorAll('div');
   divArray.forEach(element => {
     element.remove();
-})
+  });
 }
 
-input.addEventListener("change", creatingСollection)
-destoryButton.addEventListener('click', removeCollection)
+input.addEventListener('change', creatingСollection);
+destoryButton.addEventListener('click', removeCollection);
